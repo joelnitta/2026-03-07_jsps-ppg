@@ -17,14 +17,14 @@ author:
       - "Smithsonian Institution"
 ---
 
-## Outline
+## Outline {data-part="PPG の概要"}
 
 - PPG の概要
 - PPG II フェーズ1
 - PPG II フェーズ2
 - 今後の展開
 
-## 分類体系は生物学者の共通言語 {data-part="PPG の概要"}
+## 分類体系は生物学者の共通言語
 
 - 分類体系は、種についての考えを共有するための
   「共通言語」を与えてくれる
