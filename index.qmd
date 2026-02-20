@@ -16,134 +16,147 @@ author:
 
 ## Outline
 
-- Intro to PPG
-- PPG II Phase 1
-- PPG II Phase 2
-- Next steps
+- PPG の概要
+- PPG II フェーズ1
+- PPG II フェーズ2
+- 今後の展開
 
-## Taxonomies are the lingua franca of biologists
+## 分類体系は生物学者の共通言語
 
-- Taxonomies give us a "common language" to share ideas about species
+- 分類体系は、種についての考えを共有するための
+  「共通言語」を与えてくれる
 
-- Without it, we don’t know what we’re talking about!
+- これがないと、何について話しているのかが
+  分からなくなる
 
-## Taxonomies are the lingua franca of biologists
+## 分類体系は生物学者の共通言語
 
-- The APG (Angiosperm Phylogeny Group) taxonomy is critical for botanists, especially those working on flowering plants
+- APG（Angiosperm Phylogeny Group）の分類体系は、
+  とくに被子植物を扱う植物学者にとって重要
 
 ---
 
-But what about pteridophytes (ferns and lycophytes)?
+では、シダ植物（シダ類・小葉類）は？
 
-## Pteridophytes have the PPG (Pteridophyte Phylogeny Group)
+## シダ植物には PPG（Pteridophyte Phylogeny Group）がある
 
-- PPG had a late start
-  - APG: 1998, 4 major updates
-  - PPG: 2016, no updates yet
-- Community-based approach
-  - APG: 13 authors
-  - PPG: 94 authors
+- PPG は出発が遅かった
+  - APG：1998年、主要アップデート4回
+  - PPG：2016年、まだ更新なし
+- コミュニティ主導
+  - APG：著者13名
+  - PPG：著者94名
 
-## PPG II Community
+## PPG II のコミュニティ
 
-- 195 members from 36 countries
+- 36か国から195名
 
-- Steering committee of 4 members
+- 運営委員会：4名
 
-## The PPG is based on phylogeny
+## PPG は系統に基づく
 
-- Monophyly is the primary criterion for recognizing taxa
+- 分類群を認識する一次基準は単系統（monophyly）
 
-- Our current understanding of pteridophyte phylogeny is based on many, many studies
+- シダ植物の系統に関する現在の理解は、
+  非常に多くの研究に支えられている
 
-## Towards PPG II
+## PPG II に向けて
 
-- Since 2016, ca. 80 new names (genus and above) have been published
+- 2016年以降、属以上で約80の新名が公表された
 
-- We need to discuss and decide whether to accept these names or not
+- これらの名称を採用するかどうか、議論して決める必要がある
 
-- Work on updating genus and higher taxonomy for PPG II started 2023-05 ("Phase 1")
+- PPG II に向けた属以上の分類体系更新は
+  2023年5月に開始（「フェーズ1」）
 
-## A new discussion platform for PPG II Phase 1
+## PPG II（フェーズ1）の新しい議論プラットフォーム
 
-- PPG I used email as as primary discussion tool
-  - Not open
-  - No permanent record
+- PPG I では、議論の中心はメール
+  - 公開されない
+  - 記録が恒久的に残らない
 
-- PPG II uses GitHub
-  - Originally a website for software development
-  - Good functionality for hosting discussions
-  - All discussions are open and available in perpetuity
+- PPG II では GitHub を使用
+  - もともとはソフトウェア開発のためのサイト
+  - 議論をホストする機能が充実
+  - 議論はすべて公開され、恒久的に閲覧できる
 
-## List of proposals (“issues”) is available on https://github.com/pteridogroup/ppg
+## 提案（Issue）一覧
 
-## Anyone can submit a proposal
+<https://github.com/pteridogroup/ppg>
 
-- Must be a change relative to PPG I
+## 誰でも提案を提出できる
 
-- Any name must be validly published under the International Code of Nomenclature for algae, fungi, and plants (ICN)
+- PPG I に対する変更であること
 
-## All discussions are open for anybody to read and participate, and remain online in perpetuity
+- 名称は、国際藻類・菌類・植物命名規約（ICN）に基づき
+  有効に公表されている必要がある
 
-- There is a discussion period for each proposal of at least 1 month before voting
+## 議論はすべて公開され、誰でも閲覧・参加でき、記録は恒久的に残る
 
-## Voting is conducted with Google Forms
+- 各提案には、投票前に少なくとも1か月の議論期間がある
 
-- Custom R scripts automate generation of ballot
+## 投票は Google Forms で実施
 
-- 2/3 majority needed to pass
+- カスタム R スクリプトで投票用紙の生成を自動化
 
-## PPG II is now complete
+- 可決には $2/3$ 以上の賛成が必要
 
-- 74 proposals* submitted since 2023-05 (goal ~80 taxa)
+## PPG II は完成
 
-- Mean ~4 issues per month
+- 2023年5月以降、提案74件*（目標：約80分類群）
 
-- Submitted to Taxon 2026-03
+- 平均：月あたり約4件
 
-## Overview of the PPG II taxonomy
+- Taxon に 2026年3月 投稿
 
-## Phase 2: Curation of species-level data
+## PPG II 分類体系の概要
 
-- PPG II will include species-level data (PPG I only included genus and above)
+## フェーズ2：種レベルデータのキュレーション
 
-- There are too many species to vote on every change
+- PPG II は種レベルのデータも含む
+  （PPG I は属以上のみ）
 
-- PPG members volunteer as "Curators" to maintain species within their group of expertise (genus or family)
+- 種数が多すぎて、すべての変更を投票で決めるのは現実的ではない
 
-## PPG partners with WFO to curate data
+- PPG メンバーが「Curator（キュレーター）」として参加し、
+  専門とする分類群（属または科）の種を維持・更新する
 
-- World Flora Online (WFO) is a global taxonomic database for all plants
+## PPG は WFO と連携してデータを管理
 
-- PPG maintains data for ferns and lycophytes in WFO
+- World Flora Online（WFO）は、全植物を対象とする
+  グローバルな分類学データベース
 
-- WFO has a online taxonomic database editor, Rhakhis
+- PPG は WFO 上でシダ類・小葉類のデータを管理する
 
-## Rhakhis enables collaborative editing of taxonomic data
+- WFO にはオンライン編集環境 Rhakhis がある
 
-- Enforces taxonomic rules
+## Rhakhis による共同編集
 
-- Cloud-based system, so no need to send files back and forth
+- 分類学上のルールを強制できる
 
-## Benefits of the open, community-driven approach
+- クラウド型なので、ファイルのやり取りが不要
 
-- New versions of the database can be issued much more frequently
+## オープンでコミュニティ主導の利点
 
-- The workload is shared by many experts, so data are kept high quality and up-to-date
+- データベースの更新をより高頻度で行える
 
-## Where to find PPG
+- 多くの専門家で作業を分担でき、
+  データの品質と最新性を保ちやすい
+
+## PPG を参照できる場所
 
 - World Flora Online
-  - Semi-annual snapshots
+  - 年2回程度のスナップショット
 
 - PPG Website
-  - More frequent updates
+  - より頻繁な更新
 
 - Rhakhis
-  - Live data
+  - ライブデータ
 
-## Conclusion
+## まとめ
 
-- PPG takes an open, collaborative approach to taxonomy
+- PPG は、オープンで協働的なアプローチで分類体系を構築している
 
-- The methods presented here will allow PPG to issue updates frequently and keep pace with systematics research
+- ここで紹介した方法により、PPG は系統分類学研究の進展に合わせて
+  頻繁に更新を発行できるようになる
