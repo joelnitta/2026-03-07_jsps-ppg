@@ -1,6 +1,9 @@
 ---
 title: "PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築"
-format: revealjs
+format:
+  revealjs:
+    progress: false
+    include-after-body: progressor.html
 author:
   - name: "ニッタジョエル*"
     affiliation: "千葉大・院・国際"
@@ -21,7 +24,7 @@ author:
 - PPG II フェーズ2
 - 今後の展開
 
-## 分類体系は生物学者の共通言語
+## 分類体系は生物学者の共通言語 {data-part="PPG の概要"}
 
 - 分類体系は、種についての考えを共有するための
   「共通言語」を与えてくれる
@@ -60,7 +63,7 @@ author:
 - シダ植物の系統に関する現在の理解は、
   非常に多くの研究に支えられている
 
-## PPG II に向けて
+## PPG II に向けて {data-part="PPG II フェーズ1"}
 
 - 2016年以降、属以上で約80の新名が公表された
 
@@ -111,7 +114,7 @@ author:
 
 ## PPG II 分類体系の概要
 
-## フェーズ2：種レベルデータのキュレーション
+## フェーズ2：種レベルデータのキュレーション {data-part="PPG II フェーズ2"}
 
 - PPG II は種レベルのデータも含む
   （PPG I は属以上のみ）
@@ -143,7 +146,7 @@ author:
 - 多くの専門家で作業を分担でき、
   データの品質と最新性を保ちやすい
 
-## PPG を参照できる場所
+## PPG を参照できる場所 {data-part="今後の展開"}
 
 - World Flora Online
   - 年2回程度のスナップショット

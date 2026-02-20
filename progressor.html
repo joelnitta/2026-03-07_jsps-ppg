@@ -1,0 +1,171 @@
+<style>
+  #outline-progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    display: flex;
+    gap: 0.35rem;
+    padding: 0 1rem 0.65rem 1rem;
+    pointer-events: none;
+  }
+
+  #outline-progress.is-hidden {
+    display: none;
+  }
+
+  #outline-progress .op-seg {
+    position: relative;
+    flex: 1;
+    height: 1.15rem;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(127, 127, 127, 0.25);
+  }
+
+  #outline-progress .op-seg span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 0.85em;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  #outline-progress .op-seg.is-active span {
+    color: #fff;
+  }
+
+  #outline-progress .op-seg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--r-link-color, currentColor);
+    opacity: 0.85;
+    transition: transform 120ms linear, opacity 120ms linear;
+  }
+
+  #outline-progress .op-seg.is-done::after {
+    transform: scaleX(1);
+    opacity: 0.35;
+  }
+
+  #outline-progress .op-seg.is-active::after {
+    transform: scaleX(1);
+    opacity: 0.85;
+  }
+</style>
+
+<div id="outline-progress" class="is-hidden" aria-label="Outline progress">
+  <div class="op-seg" data-part="PPG の概要">
+    <span>PPG の概要</span>
+  </div>
+  <div class="op-seg" data-part="PPG II フェーズ1">
+    <span>PPG II フェーズ1</span>
+  </div>
+  <div class="op-seg" data-part="PPG II フェーズ2">
+    <span>PPG II フェーズ2</span>
+  </div>
+  <div class="op-seg" data-part="今後の展開">
+    <span>今後の展開</span>
+  </div>
+</div>
+
+<script>
+  (function () {
+    function getLeafSlides() {
+      var root = document.querySelector('.reveal .slides');
+      if (!root) return [];
+
+      var top = Array.prototype.slice.call(root.children)
+        .filter(function (el) {
+          return el.tagName === 'SECTION';
+        });
+
+      var leaves = [];
+      top.forEach(function (sec) {
+        var children = Array.prototype.slice.call(sec.children)
+          .filter(function (el) {
+            return el.tagName === 'SECTION';
+          });
+
+        if (children.length > 0) {
+          children.forEach(function (c) {
+            leaves.push(c);
+          });
+        } else {
+          leaves.push(sec);
+        }
+      });
+
+      return leaves;
+    }
+
+    function init() {
+      if (!window.Reveal) return;
+
+      var bar = document.getElementById('outline-progress');
+      if (!bar) return;
+
+      var slides = getLeafSlides();
+      var currentPart = '';
+
+      slides.forEach(function (slide) {
+        if (slide.dataset && slide.dataset.part) {
+          currentPart = slide.dataset.part;
+        }
+
+        if (!slide.dataset) slide.dataset = {};
+        slide.dataset.partEffective = currentPart || '';
+      });
+
+      var segments = Array.prototype.slice.call(
+        bar.querySelectorAll('.op-seg')
+      );
+
+      function update() {
+        var slide = window.Reveal.getCurrentSlide();
+        if (!slide || !slide.dataset) return;
+
+        var part = slide.dataset.partEffective || slide.dataset.part || '';
+        if (!part) {
+          bar.classList.add('is-hidden');
+          return;
+        }
+
+        bar.classList.remove('is-hidden');
+
+        var activeIndex = segments.findIndex(function (seg) {
+          return seg.dataset && seg.dataset.part === part;
+        });
+
+        segments.forEach(function (seg, idx) {
+          var isActive = idx === activeIndex;
+          var isDone = activeIndex !== -1 && idx < activeIndex;
+
+          seg.classList.toggle('is-active', isActive);
+          seg.classList.toggle('is-done', isDone);
+          seg.setAttribute('aria-current', isActive ? 'step' : 'false');
+        });
+      }
+
+      window.Reveal.on('ready', update);
+      window.Reveal.on('slidechanged', update);
+      update();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
