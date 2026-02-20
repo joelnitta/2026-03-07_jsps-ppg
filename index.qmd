@@ -1,0 +1,149 @@
+---
+title: "PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築"
+format: revealjs
+author:
+  - name: "ニッタジョエル*"
+    affiliation: "千葉大・院・国際"
+  - name: "Carl J. Rothfels"
+    affiliation: "Utah State University"
+  - name: "Harald Schneider"
+    affiliation:
+      - "Xishuangbanna Tropical Botanical Garden"
+  - name: "Eric Schuettpelz"
+    affiliation:
+      - "Smithsonian Institution"
+---
+
+## Outline
+
+- Intro to PPG
+- PPG II Phase 1
+- PPG II Phase 2
+- Next steps
+
+## Taxonomies are the lingua franca of biologists
+
+- Taxonomies give us a "common language" to share ideas about species
+
+- Without it, we don’t know what we’re talking about!
+
+## Taxonomies are the lingua franca of biologists
+
+- The APG (Angiosperm Phylogeny Group) taxonomy is critical for botanists, especially those working on flowering plants
+
+---
+
+But what about pteridophytes (ferns and lycophytes)?
+
+## Pteridophytes have the PPG (Pteridophyte Phylogeny Group)
+
+- PPG had a late start
+  - APG: 1998, 4 major updates
+  - PPG: 2016, no updates yet
+- Community-based approach
+  - APG: 13 authors
+  - PPG: 94 authors
+
+## PPG II Community
+
+- 195 members from 36 countries
+
+- Steering committee of 4 members
+
+## The PPG is based on phylogeny
+
+- Monophyly is the primary criterion for recognizing taxa
+
+- Our current understanding of pteridophyte phylogeny is based on many, many studies
+
+## Towards PPG II
+
+- Since 2016, ca. 80 new names (genus and above) have been published
+
+- We need to discuss and decide whether to accept these names or not
+
+- Work on updating genus and higher taxonomy for PPG II started 2023-05 ("Phase 1")
+
+## A new discussion platform for PPG II Phase 1
+
+- PPG I used email as as primary discussion tool
+  - Not open
+  - No permanent record
+
+- PPG II uses GitHub
+  - Originally a website for software development
+  - Good functionality for hosting discussions
+  - All discussions are open and available in perpetuity
+
+## List of proposals (“issues”) is available on https://github.com/pteridogroup/ppg
+
+## Anyone can submit a proposal
+
+- Must be a change relative to PPG I
+
+- Any name must be validly published under the International Code of Nomenclature for algae, fungi, and plants (ICN)
+
+## All discussions are open for anybody to read and participate, and remain online in perpetuity
+
+- There is a discussion period for each proposal of at least 1 month before voting
+
+## Voting is conducted with Google Forms
+
+- Custom R scripts automate generation of ballot
+
+- 2/3 majority needed to pass
+
+## PPG II is now complete
+
+- 74 proposals* submitted since 2023-05 (goal ~80 taxa)
+
+- Mean ~4 issues per month
+
+- Submitted to Taxon 2026-03
+
+## Overview of the PPG II taxonomy
+
+## Phase 2: Curation of species-level data
+
+- PPG II will include species-level data (PPG I only included genus and above)
+
+- There are too many species to vote on every change
+
+- PPG members volunteer as "Curators" to maintain species within their group of expertise (genus or family)
+
+## PPG partners with WFO to curate data
+
+- World Flora Online (WFO) is a global taxonomic database for all plants
+
+- PPG maintains data for ferns and lycophytes in WFO
+
+- WFO has a online taxonomic database editor, Rhakhis
+
+## Rhakhis enables collaborative editing of taxonomic data
+
+- Enforces taxonomic rules
+
+- Cloud-based system, so no need to send files back and forth
+
+## Benefits of the open, community-driven approach
+
+- New versions of the database can be issued much more frequently
+
+- The workload is shared by many experts, so data are kept high quality and up-to-date
+
+## Where to find PPG
+
+- World Flora Online
+  - Semi-annual snapshots
+
+- PPG Website
+  - More frequent updates
+
+- Rhakhis
+  - Live data
+
+## Conclusion
+
+- PPG takes an open, collaborative approach to taxonomy
+
+- The methods presented here will allow PPG to issue updates frequently and keep pace with systematics research
