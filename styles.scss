@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+
+// ── Google Fonts ──────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap'
+);
+
+// ── Fonts ─────────────────────────────────────────────────
+// Headings use a slightly formal serif; body uses
+// a clean sans-serif with strong Japanese support
+$presentation-heading-font: "Noto Serif JP", "Georgia", serif;
+$font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", sans-serif;
+$font-family-monospace: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+
+// ── Colors ────────────────────────────────────────────────
+// Warm, slightly off-white background (easier on the eyes 
+// under projector light than pure white)
+$body-bg: #f7f5f0;
+// Near-black body text — high contrast but softer than #000
+$body-color: #1a1a1a;
+// Deep forest green for headings — fitting for a botany talk
+$presentation-heading-color: #1b4332;
+// Moss green accent for links, the progress bar, etc.
+$link-color: #40916c;
+// Muted teal for inline code
+$code-color: #1d6a72;
+
+// ── Sizes ─────────────────────────────────────────────────
+// Larger base size as recommended; all em-based sizes
+// scale with this
+$presentation-font-size-root: 38px;
+$presentation-h1-font-size: 72px;
+$presentation-h2-font-size: 52px;
+$presentation-h3-font-size: 40px;
+
+/*-- scss:rules --*/
+
+// ── Title slide ───────────────────────────────────────────
+.reveal section.title-slide {
+  text-align: center;
+}
+
+.reveal section.title-slide h2 {
+  font-size: 1.45em;
+  font-family: $presentation-heading-font;
+  font-weight: 700;
+  color: $presentation-heading-color;
+  margin: 0.3em 0 0.2em;
+  line-height: 1.25;
+}
+
+.reveal section.title-slide .ts-subtitle {
+  font-size: 0.95em;
+  font-family: $font-family-sans-serif;
+  color: $body-color;
+  opacity: 0.85;
+  margin: 0 0 1.2em;
+}
+
+.reveal section.title-slide .ts-authors {
+  font-family: $font-family-sans-serif;
+  font-size: 0.78em;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 26em;
+}
+
+.reveal section.title-slide .ts-authors>div {
+  margin: 0.2em 0;
+}
+
+.reveal section.title-slide .ts-meta {
+  font-family: $font-family-sans-serif;
+  font-size: 0.68em;
+  opacity: 0.7;
+  margin-top: 1.4em;
+  letter-spacing: 0.03em;
+}

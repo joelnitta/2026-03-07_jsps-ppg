@@ -3,6 +3,7 @@ title: "PPG II、そしてその先へ：シダ植物におけるコミュニテ
 format:
   revealjs:
     progress: false
+    theme: [default, styles.scss]
     include-after-body: progressor.html
 author:
   - name: "ニッタジョエル*"
