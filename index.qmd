@@ -1,22 +1,31 @@
 ---
-title: "PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築"
 format:
   revealjs:
     progress: false
     theme: [default, styles.scss]
     include-after-body: progressor.html
-author:
-  - name: "**ニッタジョエル***"
-    affiliation: "千葉大・院・国際"
-  - name: "Carl J. Rothfels"
-    affiliation: "Utah State University"
-  - name: "Harald Schneider"
-    affiliation:
-      - "Xishuangbanna Tropical Botanical Garden"
-  - name: "Eric Schuettpelz"
-    affiliation:
-      - "Smithsonian Institution"
+execute: 
+  echo: false
+  message: false
+  warning: false
 ---
+
+## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/title_back.png" data-background-size="cover" style="width: 50%;"}
+
+::: {style="width: 100%; font-size: 0.7em;"}
+**ニッタジョエル*** (千葉大・院・国際)
+
+Carl J. Rothfels (Utah State University)
+
+Harald Schneider (Xishuangbanna Tropical Botanical Garden)
+
+Eric Schuettpelz (Smithsonian Institution)
+:::
+
+```{r}
+source("R/packages.R")
+source("R/functions.R")
+```
 
 ## Outline {data-part="PPG の概要"}
 
@@ -104,6 +113,13 @@ author:
 - カスタム R スクリプトで投票用紙の生成を自動化
 
 - 可決には $2/3$ 以上の賛成が必要
+
+## 提案の多くが認められる
+
+```{r}
+ppg_issues <- read_csv("data/ppg_issues.csv")
+make_issues_plot(ppg_issues)
+```
 
 ## PPG II は完成
 
