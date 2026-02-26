@@ -10,7 +10,7 @@ execute:
   warning: false
 ---
 
-## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/title_back.png" data-background-size="cover" style="width: 50%;"}
+## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%;"}
 
 ::: {style="width: 100%; font-size: 0.7em;"}
 **ニッタジョエル*** (千葉大・院・国際)
@@ -19,13 +19,14 @@ Carl J. Rothfels (Utah State University)
 
 Harald Schneider (Xishuangbanna Tropical Botanical Garden)
 
-Eric Schuettpelz (Smithsonian Institution)
+Eric Schuettpelz (Smithsonian<br>Institution)
 :::
 
 ```{r}
 source("R/packages.R")
 source("R/functions.R")
 ```
+
 
 ## Outline {data-part="PPG の概要"}
 
@@ -134,49 +135,103 @@ source("R/functions.R")
 
 ::: {.column width="75%"}
 ![](images/ppg-comm.png){height="450"}
+
+
+::: {style="font-size: 0.5em"}
+第20回国際植物会議（2024年・スペイン・マドリッド）にて
+:::
+
 :::
 
 ::::
 
+## PPG は系統に基づく {data-background-image="images/tree-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-## PPG は系統に基づく
-
-:::: {.columns}
-
-::: {.column width="35%"}
 - 分類群を認識する一次基準は**単系統**（monophyly）
 
-- シダ植物の系統に関する現在の理解は、
-  非常に多くの研究に支えられている
-:::
+## PPG は系統に基づく {data-background-image="images/tree-papers-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-::: {.column width="65%"}
-![](images/ppg2-tree.png){height="500"}
-:::
+- 分類群を認識する一次基準は**単系統**（monophyly）
 
-::::
-
-# PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
+- シダ植物の系統に関する現在の理解は、非常に**多くの研究**に支えられている
 
 ## PPG II に向けて
 
-- 2016年以降、属以上で約80の新名が公表された
+:::: {.columns}
 
-- これらの名称を採用するかどうか、議論して決める必要がある
+::: {.column width="50%"}
+- 2016年以降、属以上で**約80の新名**が公表された
 
-- PPG II に向けた属以上の分類体系更新は
-  2023年5月に開始（「フェーズ1」）
+- これらの名称を採用するかどうか、**議論を通して決める必要がある**
+
+- PPG II に向けた**属以上**の分類体系更新は2023年5月に開始（**「フェーズ1」**）
+:::
+
+::: {.column width="10%"}
+:::
+
+
+::: {.column width="40%"}
+![](images/sitobolium.png){height="400"}
+
+
+::: {style="font-size: 0.5em"}
+親属 ***Sitobolium***（旧 *Dennstaedtia*）  
+Triana-Morena et al. (2022)
+:::
+
+:::
+
+::::
+
+
+# PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
 
 ## PPG II（フェーズ1）の新しい議論プラットフォーム
 
-- PPG I では、議論の中心はメール
-  - 公開されない
-  - 記録が恒久的に残らない
+:::: {.columns}
 
-- PPG II では GitHub を使用
-  - もともとはソフトウェア開発のためのサイト
+::: {.column width="60%"}
+- PPG I では、議論の中心は**メール**
+  - 公開されない
+  - 記録が残らない
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+![](images/email-bad.png){height="150"}
+:::
+
+::::
+
+
+## PPG II（フェーズ1）の新しい議論プラットフォーム
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- PPG I では、議論の中心は**メール**
+  - 公開されない
+  - 記録が残らない
+
+- PPG II では **GitHub** を使用
   - 議論をホストする機能が充実
-  - 議論はすべて公開され、恒久的に閲覧できる
+  - 議論はすべて**公開**され、恒久的に閲覧できる
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="30%"}
+![](images/email-bad.png){height="150"}
+![](images/github-good.png){height="150"}
+:::
+
+::::
+
+
 
 ## 提案（Issue）一覧
 
@@ -214,7 +269,55 @@ make_issues_plot(ppg_issues)
 
 - Taxon に 2026年3月 投稿
 
-## PPG II 分類体系の概要
+---
+
+## PPG II 分類の概要
+
+::: {style="font-size: 0.7em;"}
+
+```{r}
+read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
+  select(taxonRank, accepted, synonym, ppgi_accepted) |>
+  filter_out(taxonRank == "Tribe") |>
+  mutate(
+    ppgi_accepted = case_when(
+      taxonRank == "Species" ~ "（扱っていない）",
+      .default = ppgi_accepted
+    )
+  ) |>
+  mutate(
+    taxonRank = case_when(
+      taxonRank == "Class" ~ "綱",
+      taxonRank == "Subclass" ~ "亜綱",
+      taxonRank == "Order" ~ "目",
+      taxonRank == "Suborder" ~ "亜目",
+      taxonRank == "Family" ~ "科",
+      taxonRank == "Subfamily" ~ "亜科",
+      taxonRank == "Tribe" ~ "族",
+      taxonRank == "Genus" ~ "**属**",
+      taxonRank == "Nothogenus" ~ "雑種属",
+      taxonRank == "Species" ~ "種",
+      TRUE ~ taxonRank
+    )
+  ) |>
+  mutate(
+    across(
+      c(accepted, synonym, ppgi_accepted),
+      ~ str_replace_all(.x, "not used", "（扱っていない）") |>
+        str_remove_all("\\*|\\\\")
+    )
+  ) |>
+  select(
+    Rank = taxonRank,
+    `PPG II（受容名）` = accepted,
+    `PPG II（シノニム）` = synonym,
+    `PPG I（受容名）` = ppgi_accepted
+  ) |>
+  knitr::kable()
+```
+
+:::
+
 
 # PPG II フェーズ 2 {data-part="PPG II フェーズ2"}
 

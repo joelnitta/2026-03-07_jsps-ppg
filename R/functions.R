@@ -129,7 +129,6 @@ make_issues_plot <- function(ppg_issues) {
 }
 
 make_curators_plot <- function(curators) {
-
   # Count number of genera that have x curators per genus
   curator_count <-
     curators |>

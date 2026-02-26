@@ -1,0 +1,11 @@
+taxonRank,accepted,synonym,ppgi_accepted,wf_accepted,wf_synonym
+Class,2,6,2,not used,not used
+Subclass,4,5,4,not used,not used
+Order,14,18,14,14,93
+Suborder,6,11,6,not used,not used
+Family,53,52,51,53,159
+Subfamily,36,57,28,40,101
+Tribe,not used,72,not used,5,2
+Genus,370,900,337,375,"1,028"
+Nothogenus,10,0,not used,16,5
+Species,"13,525\*","41,266\*","11,916","13,231","53,267"
