@@ -30,50 +30,135 @@ source("R/functions.R")
 ## Outline {data-part="PPG の概要"}
 
 - PPG の概要
-- PPG II フェーズ1
-- PPG II フェーズ2
+- PPG II フェーズ 1（第22回大会発表のアップデート）
+- PPG II フェーズ 2（**新しい**）
 - 今後の展開
 
-## 分類体系は生物学者の共通言語
-
-- 分類体系は、種についての考えを共有するための
-  「共通言語」を与えてくれる
-
-- これがないと、何について話しているのかが
-  分からなくなる
+# PPG の概要
 
 ## 分類体系は生物学者の共通言語
 
-- APG（Angiosperm Phylogeny Group）の分類体系は、
-  とくに被子植物を扱う植物学者にとって重要
+::: {.columns}
+::: {.column}
 
----
+- 分類体系は、種についての考えを共有するための**「共通言語」**を与えてくれる
+:::
+::: {.column}
+![](images/kyotsu-gengo_1.png){height="450"}
+:::
+:::
 
-では、シダ植物（シダ類・小葉類）は？
+## 分類体系は生物学者の共通言語
+
+::: {.columns}
+::: {.column}
+
+- 分類体系は、種についての考えを共有するための**「共通言語」**を与えてくれる
+
+- 共通言語がないと、何について話しているのかが分からなくなる
+
+:::
+::: {.column}
+![](images/kyotsu-gengo_2.png){height="450"}
+:::
+:::
+
+## 分類体系は生物学者の共通言語
+
+:::::: {.incremental}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- APG（Angiosperm Phylogeny Group）の分類体系は、とくに**被子植物**を扱う植物学者にとって重要
+
+- では、**シダ植物**は？
+
+:::
+
+::: {.column width="50%"}
+![](images/apg.png){height="450"}
+:::
+
+::::
+
+::::::
+
+## 分類体系は生物学者の共通言語
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- APG（Angiosperm Phylogeny Group）の分類体系は、とくに**被子植物**を扱う植物学者にとって重要
+
+- では、**シダ植物**は？
+
+![](images/ferns.png){height="150"}
+:::
+
+::: {.column width="50%"}
+![](images/apg-no-ferns.png){height="450"}
+:::
+
+::::
 
 ## シダ植物には PPG（Pteridophyte Phylogeny Group）がある
 
+:::: {.columns}
+
+::: {.column width="50%"}
 - PPG は出発が遅かった
   - APG：1998年、主要アップデート4回
-  - PPG：2016年、まだ更新なし
+  - PPG：2016年、まだ**更新なし**
 - コミュニティ主導
   - APG：著者13名
   - PPG：著者94名
+:::
+
+::: {.column width="50%"}
+![](images/ppg-2016.png){height="450"}
+:::
+
+::::
+
 
 ## PPG II のコミュニティ
 
+:::: {.columns}
+
+::: {.column width="25%"}
 - 36か国から195名
 
 - 運営委員会：4名
+:::
+
+::: {.column width="75%"}
+![](images/ppg-comm.png){height="450"}
+:::
+
+::::
+
 
 ## PPG は系統に基づく
 
-- 分類群を認識する一次基準は単系統（monophyly）
+:::: {.columns}
+
+::: {.column width="35%"}
+- 分類群を認識する一次基準は**単系統**（monophyly）
 
 - シダ植物の系統に関する現在の理解は、
   非常に多くの研究に支えられている
+:::
 
-## PPG II に向けて {data-part="PPG II フェーズ1"}
+::: {.column width="65%"}
+![](images/ppg2-tree.png){height="500"}
+:::
+
+::::
+
+# PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
+
+## PPG II に向けて
 
 - 2016年以降、属以上で約80の新名が公表された
 
@@ -131,48 +216,114 @@ make_issues_plot(ppg_issues)
 
 ## PPG II 分類体系の概要
 
-## フェーズ2：種レベルデータのキュレーション {data-part="PPG II フェーズ2"}
+# PPG II フェーズ 2 {data-part="PPG II フェーズ2"}
 
-- PPG II は種レベルのデータも含む
-  （PPG I は属以上のみ）
+## フェーズ2：種レベルデータのキュレーション
 
-- 種数が多すぎて、すべての変更を投票で決めるのは現実的ではない
+- PPG II は**種レベル**のデータも含む（PPG I は属以上のみ）
 
-- PPG メンバーが「Curator（キュレーター）」として参加し、
+- 種数が多すぎて、**すべての変更を投票で決めるのは現実的ではない**
+
+- PPG メンバーが**「Curator（キュレーター）」**として参加し、
   専門とする分類群（属または科）の種を維持・更新する
 
 ## PPG は WFO と連携してデータを管理
 
-- World Flora Online（WFO）は、全植物を対象とする
-  グローバルな分類学データベース
+- [**World Flora Online（WFO）**](https://www.worldfloraonline.org/)は、全植物を対象とする**グローバルな分類学データベース**
 
-- PPG は WFO 上でシダ類・小葉類のデータを管理する
+- PPG は WFO 上でシダ植物のデータを管理している
 
-- WFO にはオンライン編集環境 Rhakhis がある
+- WFOには、分類学データベース編集ツール**「Rhakhis」** がある
+
+![](images/wfo.png){height="150"}
 
 ## Rhakhis による共同編集
 
-- 分類学上のルールを強制できる
+- **分類学上のルール**を強制できる
 
-- クラウド型なので、ファイルのやり取りが不要
+- **クラウド型**なので、ファイルのやり取りが不要
+
+![](images/rhakhis-shade.png){height="250"}
 
 ## オープンでコミュニティ主導の利点
+:::: {.columns}
 
+::: {.column width="50%"}
 - データベースの更新をより高頻度で行える
+  - また10年間を待つ必要はありません！
 
 - 多くの専門家で作業を分担でき、
   データの品質と最新性を保ちやすい
+:::
+
+::: {.column width="50%"}
+![](images/computer_mob_programming.png){}
+:::
+
+::::
+
+```{r}
+url <- "https://docs.google.com/spreadsheets/d/1E4ROaW30dj4Hig3KH8qy4p1QUuXAAUUGrZ3voGUu3hM/edit?usp=sharing"
+
+# Load curator data
+curators <- read_sheet(url)
+
+n_curators <- curators |>
+  select(contains("curator")) |>
+  pivot_longer(names_to = "num", values_to = "name", everything()) |>
+  filter_out(is.na(name)) |>
+  pull(name) |>
+  n_distinct()
+```
+
+## 属の大多数にキュレーターが付いている
+
+```{r}
+make_curators_plot(curators)
+```
+
+2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターにご参加いただいている
 
 ## PPG を参照できる場所 {data-part="今後の展開"}
 
-- World Flora Online
+:::: {.columns}
+
+::: {.column width="50%"}
+- [World Flora Online](https://www.worldfloraonline.org/)
   - 年2回程度のスナップショット
+:::
 
-- PPG Website
+::: {.column width="50%"}
+![](images/wfo_shade.png){}
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- [PPG Website](https://pteridogroup.github.io/ppg.html)
   - より頻繁な更新
+:::
 
-- Rhakhis
+::: {.column width="50%"}
+![](images/ppg-class-shade.png){}
+:::
+
+::::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- [Rhakhis](https://list.worldfloraonline.org/rhakhis/ui/index.html)
   - ライブデータ
+:::
+
+::: {.column width="50%"}
+![](images/rhakhis-shade.png){}
+:::
+
+::::
 
 ## まとめ
 

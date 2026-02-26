@@ -127,3 +127,63 @@ make_issues_plot <- function(ppg_issues) {
 
   combined_plot
 }
+
+make_curators_plot <- function(curators) {
+
+  # Count number of genera that have x curators per genus
+  curator_count <-
+    curators |>
+    select(genus, contains("curator")) |>
+    pivot_longer(
+      names_to = "number",
+      values_to = "name",
+      -genus
+    ) |>
+    select(-number) |>
+    unique() |>
+    group_by(genus) |>
+    summarize(
+      n = n_distinct(name, na.rm = TRUE)
+    ) |>
+    count(n, name = "num_genera") |>
+    rename(n_curators = n) |>
+    mutate(status = ifelse(n_curators == 0, "No curator", "Has curator"))
+
+  # Set color palette
+  okabe_ito_cols <- c(
+    orange = "#E69F00",
+    skyblue = "#56B4E9",
+    bluishgreen = "#009E73",
+    yellow = "#F0E442",
+    blue = "#0072B2",
+    vermillion = "#D55E00",
+    reddishpurple = "#CC79A7"
+  )
+
+  # Make plot, highlight bar with zero curators
+  ggplot(curator_count, aes(x = n_curators, y = num_genera, fill = status)) +
+    geom_col(width = 0.7) +
+    scale_fill_manual(
+      values = c(
+        "No curator" = okabe_ito_cols[["vermillion"]],
+        "Has curator" = okabe_ito_cols[["blue"]]
+      )
+    ) +
+    scale_x_continuous(
+      breaks = 0:5,
+      expand = expansion(mult = c(0.05, 0.05))
+    ) +
+    scale_y_continuous(
+      expand = expansion(mult = c(0, 0.05))
+    ) +
+    labs(
+      x = "Number of curators per genus",
+      y = "Number of genera"
+    ) +
+    theme_bw(base_size = 24) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      legend.position = "none"
+    )
+}
