@@ -231,26 +231,64 @@ Triana-Morena et al. (2022)
 
 ::::
 
-## 提案（Issue）一覧
+## 提案（Issue）一覧 <https://github.com/pteridogroup/ppg>
 
-<https://github.com/pteridogroup/ppg>
+![](images/issues.png){}
 
 ## 誰でも提案を提出できる
 
+:::: {.columns}
+
+::: {.column width="50%"}
 - PPG I に対する変更であること
 
 - 名称は、国際藻類・菌類・植物命名規約（ICN）に基づき
   有効に公表されている必要がある
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](images/issue-detail-1.png)
+:::
+
+::::
 
 ## 議論はすべて公開され、誰でも閲覧・参加でき、記録は恒久的に残る
 
+:::: {.columns}
+
+::: {.column width="50%"}
 - 各提案には、投票前に少なくとも1か月の議論期間がある
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](images/issue-detail-2.png)
+:::
+
+::::
 
 ## 投票は Google Forms で実施
+:::: {.columns}
 
+::: {.column width="50%"}
+::::
 - カスタム R スクリプトで投票用紙の生成を自動化
 
 - 可決には $2/3$ 以上の賛成が必要
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+:::
+
 
 ## 提案の多くが認められる
 
