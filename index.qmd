@@ -8,6 +8,10 @@ execute:
   echo: false
   message: false
   warning: false
+revealjs-plugins:
+  - editable
+filters:
+  - editable
 ---
 
 ## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%;"}
@@ -236,7 +240,6 @@ Triana-Morena et al. (2022)
 ![](images/issues.png){}
 
 ## 誰でも提案を提出できる
-
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -246,10 +249,7 @@ Triana-Morena et al. (2022)
   有効に公表されている必要がある
 :::
 
-::: {.column width="10%"}
-:::
-
-::: {.column width="40%"}
+::: {.column width="50%"}
 ![](images/issue-detail-1.png)
 :::
 
