@@ -28,14 +28,14 @@ source("R/functions.R")
 ```
 
 
-## Outline {data-part="PPG の概要"}
+## Outline
 
 - PPG の概要
 - PPG II フェーズ 1（第22回大会発表のアップデート）
 - PPG II フェーズ 2（**新しい**）
 - 今後の展開
 
-# PPG の概要
+# PPG の概要 {data-part="PPG の概要"}
 
 ## 分類体系は生物学者の共通言語
 
@@ -231,8 +231,6 @@ Triana-Morena et al. (2022)
 
 ::::
 
-
-
 ## 提案（Issue）一覧
 
 <https://github.com/pteridogroup/ppg>
@@ -318,7 +316,6 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
 
 :::
 
-
 # PPG II フェーズ 2 {data-part="PPG II フェーズ2"}
 
 ## フェーズ2：種レベルデータのキュレーション
@@ -387,7 +384,9 @@ make_curators_plot(curators)
 
 2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターにご参加いただいている
 
-## PPG を参照できる場所 {data-part="今後の展開"}
+# 今後の展開 {data-part="今後の展開"}
+
+## PPG を参照できる場所
 
 :::: {.columns}
 
