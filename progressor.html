@@ -26,6 +26,13 @@
     border-radius: 999px;
     overflow: hidden;
     background: rgba(127, 127, 127, 0.25);
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 100ms ease;
+  }
+
+  #outline-progress .op-seg:hover {
+    transform: scale(1.05);
   }
 
   #outline-progress .op-seg span {
@@ -134,6 +141,50 @@
       var segments = Array.prototype.slice.call(
         bar.querySelectorAll('.op-seg')
       );
+
+      // Add click handlers to navigate to sections
+      segments.forEach(function (seg) {
+        seg.addEventListener('click', function () {
+          var targetPart = seg.dataset.part;
+          if (!targetPart) return;
+
+          // Find the first slide with this part
+          var targetSlideIndex = slides.findIndex(function (slide) {
+            return slide.dataset.partEffective === targetPart ||
+              slide.dataset.part === targetPart;
+          });
+
+          if (targetSlideIndex !== -1) {
+            // Get slide indices (horizontal, vertical)
+            var targetSlide = slides[targetSlideIndex];
+            var h = 0, v = 0;
+
+            // Find horizontal and vertical indices
+            var allSections = document.querySelectorAll('.reveal .slides > section');
+            for (var i = 0; i < allSections.length; i++) {
+              var section = allSections[i];
+              var verticals = section.querySelectorAll('section');
+
+              if (verticals.length > 0) {
+                for (var j = 0; j < verticals.length; j++) {
+                  if (verticals[j] === targetSlide) {
+                    h = i;
+                    v = j;
+                    window.Reveal.slide(h, v);
+                    return;
+                  }
+                }
+              } else {
+                if (section === targetSlide) {
+                  h = i;
+                  window.Reveal.slide(h);
+                  return;
+                }
+              }
+            }
+          }
+        });
+      });
 
       function update() {
         var slide = window.Reveal.getCurrentSlide();
