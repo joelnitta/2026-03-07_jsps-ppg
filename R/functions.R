@@ -186,3 +186,104 @@ make_curators_plot <- function(curators) {
       legend.position = "none"
     )
 }
+
+make_author_map <- function(ppg2_authors) {
+  # Get world map data
+  world <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
+
+  # Manual mapping for countries with different names
+  country_mapping <- c(
+    "USA" = "United States",
+    "England UK" = "United Kingdom",
+    "Scotland UK" = "United Kingdom",
+    "Russian Federation" = "Russia",
+    "Czech Republic" = "Czechia",
+    "Republic of Korea" = "South Korea",
+    "Brunei Darussalam" = "Brunei"
+  )
+
+  # Count members by country with mapping applied
+  country_counts <- ppg2_authors |>
+    mutate(
+      country_mapped = ifelse(
+        country %in% names(country_mapping),
+        country_mapping[country],
+        country
+      )
+    ) |>
+    count(country_mapped, name = "n_members")
+
+  # Get country centroids for points
+  world_points <- world |>
+    sf::st_centroid() |>
+    sf::st_coordinates() |>
+    as.data.frame() |>
+    bind_cols(world |> sf::st_drop_geometry() |> select(name)) |>
+    rename(lon = X, lat = Y, country_mapped = name) |>
+    mutate(
+      country_mapped = case_when(
+        country_mapped == "United States of America" ~ "United States",
+        country_mapped == "United Kingdom" ~ "United Kingdom",
+        TRUE ~ country_mapped
+      )
+    )
+
+  # Join counts to centroids
+  plot_data <- world_points |>
+    left_join(country_counts, by = "country_mapped") |>
+    filter(!is.na(n_members))
+
+  # Manual coordinate overrides for better point placement
+  coord_overrides <- tribble(
+    ~country_mapped , ~lon_new , ~lat_new ,
+    "United States" ,      -98 ,       39 , # Continental US center
+    "Russia"        ,      100 ,       60 , # Western Russia
+    "France"        ,        2 ,       47 # Metropolitan France
+  )
+
+  # Apply overrides
+  plot_data <- plot_data |>
+    left_join(coord_overrides, by = "country_mapped") |>
+    mutate(
+      lon = if_else(!is.na(lon_new), lon_new, lon),
+      lat = if_else(!is.na(lat_new), lat_new, lat)
+    ) |>
+    select(country_mapped, lon, lat, n_members)
+
+  # Set color palette
+  okabe_ito_cols <- c(
+    orange = "#E69F00",
+    skyblue = "#56B4E9",
+    bluishgreen = "#009E73",
+    yellow = "#F0E442",
+    blue = "#0072B2",
+    vermillion = "#D55E00",
+    reddishpurple = "#CC79A7"
+  )
+
+  # Create the map
+  ggplot() +
+    geom_sf(data = world, fill = "gray95", color = "gray80", size = 0.3) +
+    geom_point(
+      data = plot_data,
+      aes(x = lon, y = lat, size = n_members, color = n_members)
+    ) +
+    scale_size_continuous(
+      range = c(2, 12),
+      name = "Members"
+    ) +
+    scale_color_scico(
+      palette = "roma",
+      name = "Members",
+      direction = -1
+    ) +
+    guides(
+      size = guide_legend(),
+      color = guide_legend()
+    ) +
+    theme_void(base_size = 18) +
+    theme(
+      legend.position = c(0.1, 0.3),
+      legend.background = element_rect(fill = "white", color = "gray80")
+    )
+}

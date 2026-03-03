@@ -126,29 +126,6 @@ source("R/functions.R")
 
 ::::
 
-
-## PPG II のコミュニティ
-
-:::: {.columns}
-
-::: {.column width="25%"}
-- 36か国から195名
-
-- 運営委員会：4名
-:::
-
-::: {.column width="75%"}
-![](images/ppg-comm.png){height="450"}
-
-
-::: {style="font-size: 0.5em"}
-第20回国際植物会議（2024年・スペイン・マドリッド）にて
-:::
-
-:::
-
-::::
-
 ## PPG は系統に基づく {data-background-image="images/tree-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
 - 分類群を認識する一次基準は**単系統**（monophyly）
@@ -188,6 +165,45 @@ Triana-Morena et al. (2022)
 
 ::::
 
+## PPG II のコミュニティ
+
+```{r}
+ppg2_authors <- read_csv("data/ppg2_author_list.csv")
+
+n_auth <- ppg2_authors |> pull(name) |> n_distinct()
+
+n_country <- ppg2_authors |> pull(country) |> n_distinct()
+
+```
+
+:::: {.columns}
+
+::: {.column width="25%"}
+- `r n_country` ヶ国から `r n_auth` 名の現役メンバー
+
+- 運営委員会：5名
+
+<br>
+<br>
+
+::: {style="font-size: 0.5em"}
+第20回国際植物会議（2024年・スペイン・マドリッド）にて
+:::
+
+:::
+
+::: {.column width="75%"}
+
+```{r}
+#| fig-height: 4
+make_author_map(ppg2_authors)
+```
+
+![](images/spain-meeting.png){height="250"}
+
+:::
+
+::::
 
 # PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
 
@@ -209,7 +225,6 @@ Triana-Morena et al. (2022)
 :::
 
 ::::
-
 
 ## PPG II（フェーズ1）の新しい議論プラットフォーム
 
@@ -243,10 +258,9 @@ Triana-Morena et al. (2022)
 :::: {.columns}
 
 ::: {.column width="50%"}
-- PPG I に対する変更であること
-
-- 名称は、国際藻類・菌類・植物命名規約（ICN）に基づき
-  有効に公表されている必要がある
+- 提案の条件
+  - PPG I に対する変更であること
+  - 国際藻類・菌類・植物命名規約（ICN）に基づき有効に公表されていること
 :::
 
 ::: {.column width="50%"}
@@ -255,12 +269,13 @@ Triana-Morena et al. (2022)
 
 ::::
 
-## 議論はすべて公開され、誰でも閲覧・参加でき、記録は恒久的に残る
+## 議論はすべて公開される
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- 各提案には、投票前に少なくとも1か月の議論期間がある
+- 誰でも閲覧・参加でき、記録は恒久的に残る
+- 各提案には、投票前に少なくとも**1か月の議論期間**がある
 :::
 
 ::: {.column width="10%"}
@@ -275,20 +290,23 @@ Triana-Morena et al. (2022)
 ## 投票は Google Forms で実施
 :::: {.columns}
 
-::: {.column width="50%"}
-::::
-- カスタム R スクリプトで投票用紙の生成を自動化
-
+::: {.column width="60%"}
 - 可決には $2/3$ 以上の賛成が必要
 
+![](images/sahashia.jpg){height="250"}
+
+::: {style="font-size: 0.5em"}
+親属 ***Sahashia***（旧 *Botrychium*）  
+写真：V.S. Volkotrub <https://www.gbif.org/occurrence/2005351333>
 :::
 
-::: {.column width="10%"}
 :::
 
 ::: {.column width="40%"}
+![](images/voting.png){height="350"}
 :::
 
+::::
 
 ## 提案の多くが認められる
 
@@ -297,13 +315,21 @@ ppg_issues <- read_csv("data/ppg_issues.csv")
 make_issues_plot(ppg_issues)
 ```
 
-## PPG II は完成
+## PPG II は完成された
 
-- 2023年5月以降、提案74件*（目標：約80分類群）
+:::: {.columns}
 
-- 平均：月あたり約4件
+::: {.column width="50%"}
+- 2023年5月以降、提案74件を受けて、議論し、投票を行った（目標：約80分類群）
 
-- Taxon に 2026年3月 投稿
+- Taxon に 2026年3月 投稿済み
+:::
+
+::: {.column width="50%"}
+![](images/ppg2-ms.png){}
+:::
+
+::::
 
 ---
 
@@ -401,17 +427,34 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
 ::::
 
 ```{r}
-url <- "https://docs.google.com/spreadsheets/d/1E4ROaW30dj4Hig3KH8qy4p1QUuXAAUUGrZ3voGUu3hM/edit?usp=sharing"
-
 # Load curator data
-curators <- read_sheet(url)
+curators <- read_csv("data/curators.csv", show_col_types = FALSE)
 
-n_curators <- curators |>
-  select(contains("curator")) |>
-  pivot_longer(names_to = "num", values_to = "name", everything()) |>
+curators_long <- curators |>
+  select(genus, contains("curator")) |>
+  pivot_longer(names_to = "num", values_to = "name", -genus)
+
+n_curators <- curators_long |>
   filter_out(is.na(name)) |>
   pull(name) |>
   n_distinct()
+
+gen_count <-
+  curators_long |>
+  group_by(genus) |>
+  summarize(
+    n = n_distinct(name, na.rm = TRUE)
+  ) |>
+  mutate(
+    has_curator = case_when(
+      n > 0 ~ "yes",
+      .default = "no"
+    )
+  ) |>
+  count(has_curator) %>%
+  split(.$has_curator)
+
+genera_coverage <- round(gen_count$yes$n / sum(gen_count$yes$n, gen_count$no$n) * 100, 1)
 ```
 
 ## 属の大多数にキュレーターが付いている
@@ -420,7 +463,7 @@ n_curators <- curators |>
 make_curators_plot(curators)
 ```
 
-2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターにご参加いただいている
+2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターのご参加により属の **`r genera_coverage`%** をカバー
 
 # 今後の展開 {data-part="今後の展開"}
 

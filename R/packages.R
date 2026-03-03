@@ -1,3 +1,7 @@
 library(tidyverse)
 library(patchwork)
 library(googlesheets4)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(sf)
+library(scico)
