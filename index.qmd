@@ -46,7 +46,8 @@ source("R/functions.R")
 ::: {.columns}
 ::: {.column}
 
-- 分類体系は、種についての考えを共有するための**「共通言語」**を与えてくれる
+- 共通言語がないと、話が通じない
+
 :::
 ::: {.column}
 ![](images/kyotsu-gengo_1.png){height="450"}
@@ -58,9 +59,9 @@ source("R/functions.R")
 ::: {.columns}
 ::: {.column}
 
-- 分類体系は、種についての考えを共有するための**「共通言語」**を与えてくれる
+- 共通言語がないと、話が通じない
 
-- 共通言語がないと、何について話しているのかが分からなくなる
+- 分類体系は、**種についての「共通言語」**を与えてくれる
 
 :::
 ::: {.column}
@@ -128,20 +129,20 @@ source("R/functions.R")
 
 ## PPG は系統に基づく {data-background-image="images/tree-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-- 分類群を認識する一次基準は**単系統**（monophyly）
+- 分類群を認識する一次基準は**単系統性**（monophyly）
 
 ## PPG は系統に基づく {data-background-image="images/tree-papers-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-- 分類群を認識する一次基準は**単系統**（monophyly）
+- 分類群を認識する一次基準は**単系統性**（monophyly）
 
-- シダ植物の系統に関する現在の理解は、非常に**多くの研究**に支えられている
+- シダ植物の系統に関する現在の理解は、非常に多くの研究に支えられている
 
 ## PPG II に向けて
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- 2016年以降、属以上で**約80の新名**が公表された
+- PPG Iが発表された2016年以降、属以上で**約80の新名**が公表された
 
 - これらの名称を採用するかどうか、**議論を通して決める必要がある**
 
@@ -170,16 +171,20 @@ Triana-Morena et al. (2022)
 ```{r}
 ppg2_authors <- read_csv("data/ppg2_author_list.csv")
 
-n_auth <- ppg2_authors |> pull(name) |> n_distinct()
+n_auth <- ppg2_authors |>
+  pull(name) |>
+  n_distinct()
 
-n_country <- ppg2_authors |> pull(country) |> n_distinct()
+n_country <- ppg2_authors |>
+  pull(country) |>
+  n_distinct()
 
 ```
 
 :::: {.columns}
 
 ::: {.column width="25%"}
-- `r n_country` ヶ国から `r n_auth` 名の現役メンバー
+- **`r n_country`** ヶ国から **`r n_auth`** 名の現役メンバー
 
 - 運営委員会：5名
 
@@ -259,8 +264,8 @@ make_author_map(ppg2_authors)
 
 ::: {.column width="50%"}
 - 提案の条件
-  - PPG I に対する変更であること
-  - 国際藻類・菌類・植物命名規約（ICN）に基づき有効に公表されていること
+  - **PPG I に対する変更**であること
+  - 国際藻類・菌類・植物命名規約（ICN）に基づき**有効に公表されている**こと
 :::
 
 ::: {.column width="50%"}
@@ -308,25 +313,29 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 提案の多くが認められる
+## 議論の目標を達成した
 
 ```{r}
 ppg_issues <- read_csv("data/ppg_issues.csv")
 make_issues_plot(ppg_issues)
 ```
 
+2023年5月以降、提案 **79件** を受けて、議論し、投票を行った（目標：約80分類群）
+
 ## PPG II は完成された
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- 2023年5月以降、提案74件を受けて、議論し、投票を行った（目標：約80分類群）
+- *TAXON* に 2026年3月4日<br>**投稿済み**
 
-- Taxon に 2026年3月 投稿済み
+- **`r n_country`** ヶ国を代表する<br>**`r n_auth`** 名の著者
 :::
 
 ::: {.column width="50%"}
-![](images/ppg2-ms.png){}
+![](images/ppg2-ms-authors-short.png){}  
+...  
+![](images/ppg2-ms-classification-short.png){}
 :::
 
 ::::
@@ -335,12 +344,15 @@ make_issues_plot(ppg_issues)
 
 ## PPG II 分類の概要
 
-::: {style="font-size: 0.7em;"}
+<br>
+
+::: {style="font-size: 0.9em;"}
 
 ```{r}
 read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
   select(taxonRank, accepted, synonym, ppgi_accepted) |>
-  filter_out(taxonRank == "Tribe") |>
+  filter_out(taxonRank %in% c("Tribe", "Nothogenus", "Species")) |>
+  select(-synonym) |>
   mutate(
     ppgi_accepted = case_when(
       taxonRank == "Species" ~ "（扱っていない）",
@@ -364,16 +376,15 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
   ) |>
   mutate(
     across(
-      c(accepted, synonym, ppgi_accepted),
+      c(accepted, ppgi_accepted),
       ~ str_replace_all(.x, "not used", "（扱っていない）") |>
         str_remove_all("\\*|\\\\")
     )
   ) |>
   select(
     Rank = taxonRank,
-    `PPG II（受容名）` = accepted,
-    `PPG II（シノニム）` = synonym,
-    `PPG I（受容名）` = ppgi_accepted
+    `PPG II` = accepted,
+    `PPG I` = ppgi_accepted
   ) |>
   knitr::kable()
 ```
@@ -514,3 +525,10 @@ make_curators_plot(curators)
 
 - ここで紹介した方法により、PPG は系統分類学研究の進展に合わせて
   頻繁に更新を発行できるようになる
+
+### 謝辞
+
+- Alan Elliott (WFO)
+- Roger Hyam (WFO)
+- 第20回国際植物会議の主催者
+- 2025年 Botany 学会の主催者
