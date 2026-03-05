@@ -215,6 +215,23 @@
       window.Reveal.on('ready', update);
       window.Reveal.on('slidechanged', update);
       update();
+
+      // Hide slide number on first slide
+      function updateSlideNumber() {
+        var indices = window.Reveal.getIndices();
+        var slideNumber = document.querySelector('.reveal .slide-number');
+        if (slideNumber) {
+          if (indices.h === 0 && indices.v === 0) {
+            slideNumber.style.display = 'none';
+          } else {
+            slideNumber.style.display = '';
+          }
+        }
+      }
+
+      window.Reveal.on('ready', updateSlideNumber);
+      window.Reveal.on('slidechanged', updateSlideNumber);
+      updateSlideNumber();
     }
 
     if (document.readyState === 'loading') {

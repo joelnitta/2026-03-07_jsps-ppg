@@ -87,3 +87,9 @@ $presentation-h3-font-size: 40px;
   opacity: 0.5;
   color: $body-color;
 }
+
+// Hide slide number on title slide
+.reveal .slides>section:first-child .slide-number,
+.reveal.slide-number-c .slide-number[data-slide-number="1"] {
+  display: none;
+}
