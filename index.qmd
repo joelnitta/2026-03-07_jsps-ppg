@@ -521,10 +521,11 @@ make_curators_plot(curators)
 
 ## まとめ
 
-- PPG は、オープンで協働的なアプローチで分類体系を構築している
+- PPG は、オープンで**協働的なアプローチ**で分類体系を構築している
 
-- ここで紹介した方法により、PPG は系統分類学研究の進展に合わせて
-  頻繁に更新を発行できるようになる
+- ここで紹介した方法により、PPG は系統分類学研究の進展に合わせて**頻繁に更新**を発行できるようになる
+
+::: {style="border: 2px solid #333; padding: 20px; border-radius: 10px; background-color: #f9f9f9; font-size: 0.8em;"}
 
 ### 謝辞
 
@@ -532,3 +533,5 @@ make_curators_plot(curators)
 - Roger Hyam (WFO)
 - 第20回国際植物会議の主催者
 - 2025年 Botany 学会の主催者
+
+:::
