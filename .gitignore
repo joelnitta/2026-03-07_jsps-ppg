@@ -4,14 +4,13 @@
 # Quarto project cache
 .quarto/
 
-# Quarto rendered output
+# Quarto rendered output (in root)
 *.html
 !progressor.html
 *_files/
 
-# If you render to docs/ or _site/ in the future
+# If you render to _site/ in the future
 _site/
-docs/
 
 working/
 /.quarto/
