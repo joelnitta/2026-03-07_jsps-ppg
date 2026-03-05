@@ -4,7 +4,7 @@ format:
     progress: false
     theme: [default, styles.scss]
     include-after-body: progressor.html
-    slideNumber: c/t
+    slideNumber: true
 execute: 
   echo: false
   message: false
@@ -213,7 +213,7 @@ make_author_map(ppg2_authors)
 
 # PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
 
-## PPG II（フェーズ1）の新しい議論プラットフォーム
+## PPG II のコミュニティ
 
 :::: {.columns}
 
@@ -477,7 +477,7 @@ make_curators_plot(curators)
 
 2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターのご参加により属の **`r genera_coverage`%** をカバー
 
-# 今後の展開 {data-part="今後の展開"}
+## 今後の展開 {data-part="今後の展開"}
 
 ## PPG を参照できる場所
 

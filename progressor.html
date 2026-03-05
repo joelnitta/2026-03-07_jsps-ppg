@@ -216,16 +216,45 @@
       window.Reveal.on('slidechanged', update);
       update();
 
-      // Hide slide number on first slide
+      // Custom slide numbering that counts all slides including section dividers
       function updateSlideNumber() {
         var indices = window.Reveal.getIndices();
         var slideNumber = document.querySelector('.reveal .slide-number');
+
         if (slideNumber) {
+          // Hide on first slide
           if (indices.h === 0 && indices.v === 0) {
             slideNumber.style.display = 'none';
+            return;
           } else {
             slideNumber.style.display = '';
           }
+
+          // Count all slides including section dividers
+          var allSlides = document.querySelectorAll('.reveal .slides > section');
+          var currentSlide = 0;
+          var totalSlides = 0;
+
+          for (var i = 0; i < allSlides.length; i++) {
+            var section = allSlides[i];
+            var verticals = section.querySelectorAll(':scope > section');
+
+            if (verticals.length > 0) {
+              // Has vertical slides
+              totalSlides += verticals.length;
+              if (i === indices.h) {
+                currentSlide = totalSlides - verticals.length + indices.v + 1;
+              }
+            } else {
+              // Single slide (including section dividers)
+              totalSlides++;
+              if (i === indices.h) {
+                currentSlide = totalSlides;
+              }
+            }
+          }
+
+          slideNumber.textContent = currentSlide + ' / ' + totalSlides;
         }
       }
 
