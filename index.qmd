@@ -25,6 +25,8 @@ Carl J. Rothfels (Utah State University)
 Harald Schneider (Xishuangbanna Tropical Botanical Garden)
 
 Eric Schuettpelz (Smithsonian<br>Institution)
+
+![](images/qr_code.png){height="200"}
 :::
 
 ```{r}
@@ -35,10 +37,26 @@ source("R/functions.R")
 
 ## Outline
 
+:::: {.columns}
+
+::: {.column width="50%"}
 - PPG の概要
 - PPG II フェーズ 1（第22回大会発表のアップデート）
 - PPG II フェーズ 2（**新しい**）
 - 今後の展開
+:::
+
+::: {.column width="50%"}
+![](images/qr_code.png){height="400"}
+
+::: {style="font-size: 0.5em"}
+スライドのアクセスは⬆︎から
+:::
+
+:::
+
+::::
+
 
 # PPG の概要 {data-part="PPG の概要"}
 
