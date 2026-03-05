@@ -75,3 +75,15 @@ $presentation-h3-font-size: 40px;
   margin-top: 1.4em;
   letter-spacing: 0.03em;
 }
+
+// ── Slide numbers ─────────────────────────────────────────
+// Position slide numbers in top-right corner, unobtrusively
+.reveal .slide-number {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  bottom: auto;
+  font-size: 0.6em;
+  opacity: 0.5;
+  color: $body-color;
+}

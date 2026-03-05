@@ -4,6 +4,7 @@ format:
     progress: false
     theme: [default, styles.scss]
     include-after-body: progressor.html
+    slideNumber: c/t
 execute: 
   echo: false
   message: false
