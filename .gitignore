@@ -5,9 +5,9 @@
 .quarto/
 
 # Quarto rendered output (in root)
-*.html
-!progressor.html
-*_files/
+./*.html
+./!progressor.html
+./*_files/
 
 # If you render to _site/ in the future
 _site/
