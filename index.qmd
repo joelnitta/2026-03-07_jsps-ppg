@@ -15,7 +15,7 @@ filters:
   - editable
 ---
 
-## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%;"}
+## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%; margin-left: -65px;"}
 
 ::: {style="width: 100%; font-size: 0.7em;"}
 **ニッタジョエル*** (千葉大・院・国際)
@@ -26,7 +26,19 @@ Harald Schneider (Xishuangbanna Tropical Botanical Garden)
 
 Eric Schuettpelz (Smithsonian<br>Institution)
 
+:::: {.columns}
+
+::: {.column width="50%"}
 ![](images/qr_code.png){height="200"}
+:::
+
+::: {.column width="50%" style="font-size: 0.8em;"}
+2026.03.07  
+JSPS 第25回大会  
+OB09
+:::
+
+::::
 :::
 
 ```{r}
@@ -231,7 +243,8 @@ make_author_map(ppg2_authors)
 
 # PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
 
-## PPG II のコミュニティ
+## PPG II（フェーズ1）の新しい議論<br>プラットフォーム
+
 
 :::: {.columns}
 
@@ -250,7 +263,7 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## PPG II（フェーズ1）の新しい議論プラットフォーム
+## PPG II（フェーズ1）の新しい議論<br>プラットフォーム
 
 :::: {.columns}
 
@@ -274,7 +287,7 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 提案（Issue）一覧 <https://github.com/pteridogroup/ppg>
+## 提案（Issue）一覧 <https://github.com/pteridogroup/ppg/issues>
 
 ![](images/issues.png){}
 
@@ -412,7 +425,7 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
 
 # PPG II フェーズ 2 {data-part="PPG II フェーズ2"}
 
-## フェーズ2：種レベルデータのキュレーション
+## フェーズ2：種レベルデータの<br>キュレーション
 
 - PPG II は**種レベル**のデータも含む（PPG I は属以上のみ）
 
@@ -437,7 +450,7 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
 
 - **クラウド型**なので、ファイルのやり取りが不要
 
-![](images/rhakhis-shade.png){height="250"}
+![](images/rhakhis.png){height="350"}
 
 ## オープンでコミュニティ主導の利点
 :::: {.columns}
@@ -548,9 +561,19 @@ make_curators_plot(curators)
 
 ### 謝辞
 
+:::: {.columns}
+
+::: {.column width="50%"}
 - Alan Elliott (WFO)
 - Roger Hyam (WFO)
 - 第20回国際植物会議の主催者
 - 2025年 Botany 学会の主催者
+:::
+
+::: {.column width="50%"}
+![](images/qr_code.png){height="210" style="margin-top: -30px; margin-left: 60px;"}
+:::
+
+::::
 
 :::
