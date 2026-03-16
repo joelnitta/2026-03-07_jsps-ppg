@@ -15,30 +15,15 @@ filters:
   - editable
 ---
 
-## PPG II、そしてその先へ：シダ植物におけるコミュニティ主導型分類体系の構築 {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%; margin-left: -65px;"}
+## PPG II and beyond: Building an open, community driven taxonomic system for ferns and lycophytes {data-background-image="images/Picture1.png" data-background-size="contain" background-position="right" style="width: 50%; margin-left: -65px;"}
 
 ::: {style="width: 100%; font-size: 0.7em;"}
-**ニッタジョエル*** (千葉大・院・国際)
+**Joel H. Nitta** (PPG Organizing Committee)
 
-Carl J. Rothfels (Utah State University)
+Graduate School of Global and Transdisciplinary Studies
 
-Harald Schneider (Xishuangbanna Tropical Botanical Garden)
+Chiba University, Japan
 
-Eric Schuettpelz (Smithsonian<br>Institution)
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](images/qr_code.png){height="200"}
-:::
-
-::: {.column width="50%" style="font-size: 0.8em;"}
-2026.03.07  
-JSPS 第25回大会  
-OB09
-:::
-
-::::
 :::
 
 ```{r}
@@ -52,31 +37,31 @@ source("R/functions.R")
 :::: {.columns}
 
 ::: {.column width="50%"}
-- PPG の概要
-- PPG II フェーズ 1（第22回大会発表のアップデート）
-- PPG II フェーズ 2（**新しい**）
-- 今後の展開
+- Introduction to PPG
+- PPG II Phase 1
+- PPG II Phase 2
+- Conclusion
 :::
 
 ::: {.column width="50%"}
 ![](images/qr_code.png){height="400"}
 
 ::: {style="font-size: 0.5em"}
-スライドのアクセスは⬆︎から
+Access slides here ⬆︎
 :::
 
 :::
 
 ::::
 
-# PPG の概要 {data-part="PPG の概要"}
+# Introduction to PPG {data-part="Intro to PPG"}
 
-## 分類体系は生物学者の共通言語
+## Taxonomies are the *lingua franca* of biologists
 
 ::: {.columns}
 ::: {.column}
 
-- 共通言語がないと、話が<br>通じない
+- Taxonomies give us a **"common language"** to share ideas about species
 
 :::
 ::: {.column}
@@ -84,14 +69,14 @@ source("R/functions.R")
 :::
 :::
 
-## 分類体系は生物学者の共通言語
+## Taxonomies are the *lingua franca* of biologists
 
 ::: {.columns}
 ::: {.column}
 
-- 共通言語がないと、話が<br>通じない
+- Taxonomies give us a **"common language"** to share ideas about species
 
-- 分類体系は、**種についての「共通言語」**を与えて<br>くれる
+- Without it, we don’t know what we’re talking about!
 
 :::
 ::: {.column}
@@ -99,16 +84,16 @@ source("R/functions.R")
 :::
 :::
 
-## 分類体系は生物学者の共通言語
+## Taxonomies are the *lingua franca* of biologists
 
 :::::: {.incremental}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- APG（Angiosperm Phylogeny Group）の分類体系は、とくに**被子植物**を扱う植物学者にとって重要
+- The APG (Angiosperm Phylogeny Group) taxonomy is critical for botanists, especially those working on **flowering plants**
 
-- では、**シダ植物**は？
+- What about **pteridophytes (ferns and lycophytes)**?
 
 :::
 
@@ -120,16 +105,14 @@ source("R/functions.R")
 
 ::::::
 
-## 分類体系は生物学者の共通言語
+## Taxonomies are the *lingua franca* of biologists
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- APG（Angiosperm Phylogeny Group）の分類体系は、とくに**被子植物**を扱う植物学者にとって重要
+- The APG (Angiosperm Phylogeny Group) taxonomy is critical for botanists, especially those working on **flowering plants**
 
-- では、**シダ植物**は？
-
-![](images/ferns.png){height="150"}
+- What about **pteridophytes (ferns and lycophytes)**?
 :::
 
 ::: {.column width="50%"}
@@ -138,45 +121,46 @@ source("R/functions.R")
 
 ::::
 
-## シダ植物には PPG（Pteridophyte Phylogeny Group）がある
+## Pteridophytes have the PPG (Pteridophyte Phylogeny Group)
 
 :::: {.columns}
 
-::: {.column width="50%"}
-- PPG は出発が遅かった
-  - APG：1998年、主要<br>アップデート4回
-  - PPG：2016年、まだ<br>**更新なし**
-- コミュニティ主導
-  - APG：著者13名
-  - PPG：著者94名
+::: {.column width="60%"}
+- Had a late start
+  - APG: 1998, 4 major updates
+  - PPG: 2016, **no updates yet**
+
+- Community-based approach
+  - APG: 13 authors
+  - PPG: 94 authors
 :::
 
-::: {.column width="50%"}
-![](images/ppg-2016.png){height="450"}
+::: {.column width="40%"}
+![](images/ppg-2016.png){height="400"}
 :::
 
 ::::
 
-## PPG は系統に基づく {data-background-image="images/tree-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
+## PPG is based on **phylogeny** {data-background-image="images/tree-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-- 分類群を認識する一次基準は**単系統性**（monophyly）
+- Primary criterion for recognizing taxa is **monophyly**
 
-## PPG は系統に基づく {data-background-image="images/tree-papers-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
+## PPG is based on **phylogeny** {data-background-image="images/tree-papers-back.png" data-background-size="auto 85%" data-background-position="right" style="width: 80%;"}
 
-- 分類群を認識する一次基準は**単系統性**（monophyly）
+- Primary criterion for recognizing taxa is **monophyly**
 
-- シダ植物の系統に関する現在の理解は、<br>多くの研究に支えられている
+- Based on many studies conducted at lower taxonomic levels
 
-## PPG II に向けて
+## Towards PPG II
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- PPG Iが発表された2016年以降、属以上で**約80の新名**が公表された
+- Since 2016, ca. **80 new names** (genus and above) have been published
 
-- これらの名称を採用するかどうか、**議論を通して<br>決める必要がある**
+- We need to **discuss and decide** whether to accept these names or not
 
-- PPG II に向けた**属以上**の分類体系更新は2023年5月に開始（**「フェーズ1」**）
+- Work towards PPG II, including names at genus and above started in May 2023 (**Phase I**)
 :::
 
 ::: {.column width="10%"}
@@ -188,7 +172,7 @@ source("R/functions.R")
 
 
 ::: {style="font-size: 0.5em"}
-親属 ***Sitobolium***（旧 *Dennstaedtia*）  
+***Sitobolium*** Gen. nov.（previously *Dennstaedtia*）  
 Triana-Morena et al. (2022)
 :::
 
@@ -196,7 +180,7 @@ Triana-Morena et al. (2022)
 
 ::::
 
-## PPG II のコミュニティ
+## PPG II community
 
 ```{r}
 ppg2_authors <- read_csv("data/ppg2_author_list.csv")
@@ -214,20 +198,20 @@ n_country <- ppg2_authors |>
 :::: {.columns}
 
 ::: {.column width="25%"}
-- **`r n_country`** ヶ国から **`r n_auth`** 名の現役メンバー
+- **`r n_auth`** active members representing **`r n_country`** countries
 
-- 運営委員会：5名
-
-<br>
-<br>
+- Coordinating committee of 5 members
 
 ::: {style="font-size: 0.5em"}
-第20回国際植物会議（2024年・スペイン・マドリッド）にて
+At International Botanical Congress XX in Madrid, Spain (2024)
 :::
 
 :::
 
-::: {.column width="75%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
 
 ```{r}
 #| fig-height: 4
@@ -240,17 +224,17 @@ make_author_map(ppg2_authors)
 
 ::::
 
-# PPG II フェーズ 1 {data-part="PPG II フェーズ1"}
+# PPG II Phase 1 {data-part="PPG II Phase 1"}
 
-## PPG II（フェーズ1）の新しい議論<br>プラットフォーム
+## A new discussion platform for PPG II
 
 
 :::: {.columns}
 
 ::: {.column width="60%"}
-- PPG I では、議論の中心は**メール**
-  - 公開されない
-  - 記録が残らない
+- PPG I used **email** as as primary discussion tool
+  - Not open
+  - No permanent record
 :::
 
 ::: {.column width="10%"}
@@ -262,18 +246,17 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## PPG II（フェーズ1）の新しい議論<br>プラットフォーム
+## A new discussion platform for PPG II
 
 :::: {.columns}
 
 ::: {.column width="60%"}
-- PPG I では、議論の中心は**メール**
-  - 公開されない
-  - 記録が残らない
+- PPG I used **email** as as primary discussion tool
+  - Not open
+  - No permanent record
 
-- PPG II では **GitHub** を使用
-  - 議論をホストする機能が充実
-  - 議論はすべて**公開**され、恒久的に閲覧できる
+- PPG II uses **GitHub**
+  - All discussions are **open** and available in perpetuity
 :::
 
 ::: {.column width="10%"}
@@ -286,17 +269,17 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 提案（Issue）一覧 <https://github.com/pteridogroup/ppg/issues>
+## List of proposals (“issues”) is available at <https://github.com/pteridogroup/ppg>
 
 ![](images/issues.png){}
 
-## 誰でも提案を提出できる
+## **Anyone** can submit a proposal
 :::: {.columns}
 
 ::: {.column width="50%"}
-- 提案の条件
-  - **PPG I に対する変更**<br>である
-  - 国際藻類・菌類・植物命名規約（ICN）に基づき<br>**有効に公表されている**
+- Conditions
+  - Must be a change relative to PPG I
+  - Must be **validly published** according to the International Code of Nomenclature
 :::
 
 ::: {.column width="50%"}
@@ -305,13 +288,13 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 議論はすべて公開される
+## All discussions are **open**
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- 誰でも閲覧・参加でき、記録は恒久的に残る
-- 各提案には、投票前に少なくとも**1か月の議論期間**<br>がある
+- Anybody can view and comment
+- There is a **1-month discussion** period before voting
 :::
 
 ::: {.column width="10%"}
@@ -323,17 +306,17 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 投票は Google Forms で実施
+## Voting by Google forms
 :::: {.columns}
 
 ::: {.column width="60%"}
-- 可決には $2/3$ 以上の賛成が必要
+- A $2/3$ majority is required to pass
 
 ![](images/sahashia.jpg){height="250"}
 
 ::: {style="font-size: 0.5em"}
-親属 ***Sahashia***（旧 *Botrychium*）  
-写真：V.S. Volkotrub <https://www.gbif.org/occurrence/2005351333>
+***Sahashia*** Gen. nov.（formerly *Botrychium*）  
+Photo: V.S. Volkotrub <https://www.gbif.org/occurrence/2005351333>
 :::
 
 :::
@@ -344,23 +327,23 @@ make_author_map(ppg2_authors)
 
 ::::
 
-## 議論の目標を達成した
+## We have reached the goal for proposals
 
 ```{r}
 ppg_issues <- read_csv("data/ppg_issues.csv")
 make_issues_plot(ppg_issues)
 ```
 
-2023年5月以降、提案 **79件** を受けて、議論し、投票を行った（目標：約80分類群）
+Since May 2023, **79** proposals were submitted and voted on (goal: 80 taxa)
 
-## PPG II は完成された
+## PPG II is **complete**
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- *TAXON* に 2026年3月4日<br>**投稿済み**
+- Submitted to *TAXON* on March 4, 2026
 
-- **`r n_country`** ヶ国を代表する<br>**`r n_auth`** 名の著者
+- Includes **`r n_auth`** authors representing **`r n_country`** countries
 :::
 
 ::: {.column width="50%"}
@@ -373,7 +356,7 @@ make_issues_plot(ppg_issues)
 
 ---
 
-## PPG II 分類の概要
+## Overview of the PPG II taxonomy 
 
 <br>
 
@@ -385,31 +368,9 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
   filter_out(taxonRank %in% c("Tribe", "Nothogenus", "Species")) |>
   select(-synonym) |>
   mutate(
-    ppgi_accepted = case_when(
-      taxonRank == "Species" ~ "（扱っていない）",
-      .default = ppgi_accepted
-    )
-  ) |>
-  mutate(
-    taxonRank = case_when(
-      taxonRank == "Class" ~ "綱",
-      taxonRank == "Subclass" ~ "亜綱",
-      taxonRank == "Order" ~ "目",
-      taxonRank == "Suborder" ~ "亜目",
-      taxonRank == "Family" ~ "科",
-      taxonRank == "Subfamily" ~ "亜科",
-      taxonRank == "Tribe" ~ "族",
-      taxonRank == "Genus" ~ "**属**",
-      taxonRank == "Nothogenus" ~ "雑種属",
-      taxonRank == "Species" ~ "種",
-      TRUE ~ taxonRank
-    )
-  ) |>
-  mutate(
     across(
       c(accepted, ppgi_accepted),
-      ~ str_replace_all(.x, "not used", "（扱っていない）") |>
-        str_remove_all("\\*|\\\\")
+      ~ str_remove_all(.x, "\\*|\\\\")
     )
   ) |>
   select(
@@ -422,45 +383,44 @@ read_csv("data/ppg_taxa_count.csv", show_col_types = FALSE) |>
 
 :::
 
-# PPG II フェーズ 2 {data-part="PPG II フェーズ2"}
+# PPG II Phase 2 {data-part="PPG II Phase 2"}
 
-## フェーズ2：種レベルデータの<br>キュレーション
+## Phase 2: Curation of species-level data
 
-- PPG II は**種レベル**のデータも含む（PPG I は属以上のみ）
+- PPG II includes data to **species** (PPG I only treated to genus)
 
-- 種数が多すぎて、**すべての変更を投票で決めるのは現実的ではない**
+- There are too many species to vote on every change
 
-- PPG メンバーが**「Curator（キュレーター）」**として参加し、
-  専門とする分類群（属または科）の種を維持・更新する
+- Instead, PPG members volunteer as **Curators** who are responsible for species within their taxon of expertise (usually genus or family)
 
-## PPG は WFO と連携してデータを管理
+## PPG manages data in parternship with WFO
 
-- [**World Flora Online（WFO）**](https://www.worldfloraonline.org/)は、全植物を対象とする**グローバルな分類学データベース**
+- [**World Flora Online（WFO）**](https://www.worldfloraonline.org/) is a **global database for plant names**
 
-- PPG は WFO 上でシダ植物のデータを管理している
+- PPG manages data for pteridophytes in WFO
 
-- WFOには、分類学データベース編集ツール**「Rhakhis」** がある
+- WFO provides a taxonomic database editor called **"Rhakhis"**
 
 ![](images/wfo.png){height="150"}
 
-## Rhakhis による共同編集
+## Collaborative taxonomic editing in Rhakhis
 
-- **分類学上のルール**を強制できる
+- Rhakhis enforces **taxonomic rules**
 
-- **クラウド型**なので、ファイルのやり取りが不要
+- All editing done online, **in the cloud**
 
 ![](images/rhakhis.png){height="350"}
 
-## オープンでコミュニティ主導の利点
+## Benefits of the open, community-based approach
 :::: {.columns}
 
 ::: {.column width="50%"}
-- データベースの更新をより高頻度で行える
-  - また10年間を待つ必要はありません！
-  - PPG 2.0.1, 2.0.2, など
 
-- 多くの専門家で作業を分担でき、
-  データの品質と最新性を保ちやすい
+- Lessens the workload
+- Ensures **high-quality data**
+- **More frequent updates**
+  - We don't have to wait another 10 years!!
+  - PPG 2.0.1, 2.0.2, etc.
 :::
 
 ::: {.column width="50%"}
@@ -497,26 +457,29 @@ gen_count <-
   count(has_curator) %>%
   split(.$has_curator)
 
-genera_coverage <- round(gen_count$yes$n / sum(gen_count$yes$n, gen_count$no$n) * 100, 1)
+genera_coverage <- round(
+  gen_count$yes$n / sum(gen_count$yes$n, gen_count$no$n) * 100,
+  1
+)
 ```
 
-## 属の大多数にキュレーターが付いている
+## The majority of genera have at least one curator
 
 ```{r}
 make_curators_plot(curators)
 ```
 
-2026年2月17日の開始以降、計 **`r n_curators` 名**のキュレーターのご参加により属の **`r genera_coverage`%** をカバー
+Since starting Feb. 17 2026, we already have **`r n_curators`** curators covering **`r genera_coverage`%** genera
 
-## 今後の展開 {data-part="今後の展開"}
+# Conclusion {data-part="Conclusion"}
 
-## PPG を参照できる場所
+## Places to find PPG
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 - [World Flora Online](https://www.worldfloraonline.org/)
-  - 年2回程度のスナップショット
+  - Snapshots updated twice a year
 :::
 
 ::: {.column width="50%"}
@@ -529,7 +492,7 @@ make_curators_plot(curators)
 
 ::: {.column width="50%"}
 - [PPG Website](https://pteridogroup.github.io/ppg.html)
-  - より頻繁な更新
+  - More frequent updates
 :::
 
 ::: {.column width="50%"}
@@ -542,7 +505,7 @@ make_curators_plot(curators)
 
 ::: {.column width="50%"}
 - [Rhakhis](https://list.worldfloraonline.org/rhakhis/ui/index.html)
-  - ライブデータ
+  - Live data
 :::
 
 ::: {.column width="50%"}
@@ -551,23 +514,23 @@ make_curators_plot(curators)
 
 ::::
 
-## まとめ
+## Summary
 
-- PPG は、オープンで**協働的なアプローチ**で分類体系を構築している
+- PPG takes an **open**, **community-based** approach to taxonomic classification
 
-- ここで紹介した方法により、PPG は系統分類学研究の進展に合わせて**頻繁に更新**を発行できるようになる
+- Thanks to this, we are able to provide **high-quality**, **up-to-date** data
 
 ::: {style="border: 2px solid #333; padding: 20px; border-radius: 10px; background-color: #f9f9f9; font-size: 0.8em;"}
 
-### 謝辞
+### Acknowledgements
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 - Alan Elliott (WFO)
 - Roger Hyam (WFO)
-- 第20回国際植物会議の主催者
-- 2025年 Botany 学会の主催者
+- Organizers of IBC XX
+- Oranizers of Botany 2025
 :::
 
 ::: {.column width="50%"}
